@@ -11,7 +11,7 @@ environment:
 dependencies:
   analyzer: ^6.4.1
   build: ^2.4.1
-  source_gen: ^1.5.0
+  source_gen: ^2.0.0
   path: ^1.9.0
   glob: ^2.1.2
   code_builder: ^4.10.0
