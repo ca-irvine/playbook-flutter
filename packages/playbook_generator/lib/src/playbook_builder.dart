@@ -88,14 +88,14 @@ ${storiesLibrary.accept(emitter)}
       if (element is ClassElement) {
         return (element.unnamedConstructor?.isDefaultConstructor ?? false) &&
             element.allSupertypes.any(
-              (s) => s.getDisplayString(withNullability: true) == w,
+              (s) => s.getDisplayString() == w,
             );
       } else if (element is FunctionElement) {
-        final firstParam = element.parameters.firstOrNull?.type
-            .getDisplayString(withNullability: false);
+        final firstParam =
+            element.parameters.firstOrNull?.type.getDisplayString();
         return element.parameters.length <= 1 &&
             (firstParam == null || firstParam == bc) &&
-            element.returnType.getDisplayString(withNullability: true) == w;
+            element.returnType.getDisplayString() == w;
       } else {
         return false;
       }
@@ -135,8 +135,7 @@ ${a(refer(scenarioName, _playbookUrl))}(
         .where((e) => e.isPublic && e.parameters.isEmpty)
         .expand<Code>(
       (e) {
-        final returnTypeString =
-            e.returnType.getDisplayString(withNullability: true);
+        final returnTypeString = e.returnType.getDisplayString();
         final scenarioRefer = refer(e.displayName, uri);
         if (returnTypeString == 'Scenario') {
           return [scenarioRefer([]).code];
