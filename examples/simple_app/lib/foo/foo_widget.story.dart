@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:playbook/playbook.dart';
 
@@ -16,6 +18,8 @@ Scenario foo2() {
 }
 
 class Foo3 extends StatelessWidget {
+  const Foo3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(color: Colors.amber);
@@ -23,47 +27,52 @@ class Foo3 extends StatelessWidget {
 }
 
 class Foo4_Bar extends StatelessWidget {
+  const Foo4_Bar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(color: Colors.pink);
   }
 }
 
-Widget foo5() => Text('Foo 5');
+Widget foo5() => const Text('Foo 5');
 
 Story fooWidgetStory() {
-  return Story('FooWidget', scenarios: [
-    foo1(),
-    foo2(),
-    Scenario(
-      'foo3foo3',
-      layout: ScenarioLayout.sizing(
-        ScenarioLayoutFixed(
-          100.0,
+  return Story(
+    'FooWidget',
+    scenarios: [
+      foo1(),
+      foo2(),
+      const Scenario(
+        'foo3foo3',
+        layout: ScenarioLayout.sizing(
+          ScenarioLayoutFixed(
+            100,
+          ),
+          ScenarioLayoutFixed(
+            200,
+          ),
         ),
-        ScenarioLayoutFixed(
-          200.0,
+        child: Foo3(),
+      ),
+      const Scenario(
+        'Foo4 Bar',
+        layout: ScenarioLayout.fixedH(
+          300,
+          crossAxisLayout: ScenarioLayoutFill(),
         ),
+        child: Foo4_Bar(),
       ),
-      child: Foo3(),
-    ),
-    Scenario(
-      'Foo4 Bar',
-      layout: ScenarioLayout.fixedH(
-        300.0,
-        crossAxisLayout: ScenarioLayoutFill(),
-      ),
-      child: Foo4_Bar(),
-    ),
-    Scenario(
-      'foo5',
-      layout: ScenarioLayout.fixedV(
-        500.0,
-        crossAxisLayout: ScenarioLayoutFixed(
-          200.0,
+      Scenario(
+        'foo5',
+        layout: const ScenarioLayout.fixedV(
+          500,
+          crossAxisLayout: ScenarioLayoutFixed(
+            200,
+          ),
         ),
+        child: foo5(),
       ),
-      child: foo5(),
-    ),
-  ]);
+    ],
+  );
 }

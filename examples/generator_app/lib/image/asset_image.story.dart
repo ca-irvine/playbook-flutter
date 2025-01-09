@@ -8,7 +8,7 @@ const storyTitle = 'AssetImage';
 Widget $AssetImage() => Image.asset('assets/flutter.png');
 
 @GenerateScenario()
-Widget $MaterialIcon() => Icon(Icons.access_alarm);
+Widget $MaterialIcon() => const Icon(Icons.access_alarm);
 
 @GenerateScenario()
-Widget $CupertinoIcon() => Icon(CupertinoIcons.alarm);
+Widget $CupertinoIcon() => const Icon(CupertinoIcons.alarm);

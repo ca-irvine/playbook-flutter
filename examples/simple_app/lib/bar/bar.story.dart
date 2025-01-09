@@ -2,14 +2,14 @@ import 'package:playbook/playbook.dart';
 import 'package:simple_app/bar/bar.dart';
 
 Scenario twoLineText() {
-  return Scenario(
+  return const Scenario(
     'TwoLine',
     child: BarWidget(text: 'TextTextText\nTextText'),
   );
 }
 
 Scenario emptyText() {
-  return Scenario('Empty', child: BarWidget(text: ''));
+  return const Scenario('Empty', child: BarWidget(text: ''));
 }
 
 List<Scenario> variousText() {

@@ -1,18 +1,17 @@
+import 'package:generator_app/bar/bar.dart';
 import 'package:playbook/playbook.dart';
-
-import 'bar.dart';
 
 const storyTitle = 'BarWidget';
 
 Scenario twoLineText() {
-  return Scenario(
+  return const Scenario(
     'TwoLine',
     child: BarWidget(text: 'TextTextText\nTextText'),
   );
 }
 
 Scenario emptyText() {
-  return Scenario('Empty', child: BarWidget(text: ''));
+  return const Scenario('Empty', child: BarWidget(text: ''));
 }
 
 List<Scenario> variousText() {

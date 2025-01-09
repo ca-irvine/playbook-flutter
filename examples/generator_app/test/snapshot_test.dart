@@ -6,7 +6,7 @@ import 'package:playbook_snapshot/playbook_snapshot.dart';
 Future<void> main() async {
   testWidgets('Take snapshots', (tester) async {
     await playbook.run(
-      Snapshot(
+      const Snapshot(
         devices: [
           SnapshotDevice.iPhoneSE2nd,
         ],

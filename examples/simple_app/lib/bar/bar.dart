@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class BarWidget extends StatelessWidget {
   const BarWidget({
+    super.key,
     required this.text,
   });
 
@@ -9,15 +10,14 @@ class BarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ColoredBox(
       color: Colors.amberAccent,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(Icons.star),
-          SizedBox(width: 16),
-          Text(text, style: Theme.of(context).textTheme.headlineSmall)
+          const Icon(Icons.star),
+          const SizedBox(width: 16),
+          Text(text, style: Theme.of(context).textTheme.headlineSmall),
         ],
       ),
     );

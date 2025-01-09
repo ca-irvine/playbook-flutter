@@ -1,11 +1,14 @@
-import 'package:simple_app/page/page.dart';
 import 'package:playbook/playbook.dart';
+import 'package:simple_app/page/page.dart';
 
 Story homePageStory() {
-  return Story('HomePage', scenarios: [
-    Scenario(
-      'myPage',
-      child: HomePage(title: 'Home Page'),
-    ),
-  ]);
+  return const Story(
+    'HomePage',
+    scenarios: [
+      Scenario(
+        'myPage',
+        child: HomePage(title: 'Home Page'),
+      ),
+    ],
+  );
 }

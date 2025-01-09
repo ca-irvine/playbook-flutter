@@ -19,7 +19,7 @@ Future<void> main() async {
         scrollableStory(),
       ],
     ).run(
-      Snapshot(
+      const Snapshot(
         devices: [
           SnapshotDevice.iPhoneSE2nd,
         ],

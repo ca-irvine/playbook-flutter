@@ -1,5 +1,9 @@
 include: package:very_good_analysis/analysis_options.5.1.0.yaml
 
+analyzer:
+  exclude:
+    - '**/generated_playbook.dart'
+
 linter:
   rules:
     sort_pub_dependencies: false

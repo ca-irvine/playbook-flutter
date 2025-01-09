@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:playbook/playbook.dart';
 
@@ -25,6 +27,8 @@ Scenario foo2() {
   ),
 )
 class Foo3 extends StatelessWidget {
+  const Foo3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(color: Colors.amber);
@@ -38,6 +42,8 @@ class Foo3 extends StatelessWidget {
   ),
 )
 class $Foo4_Bar extends StatelessWidget {
+  const $Foo4_Bar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(color: Colors.pink);
@@ -50,4 +56,4 @@ class $Foo4_Bar extends StatelessWidget {
     crossAxisLayout: ScenarioLayoutFixed(200),
   ),
 )
-Widget $foo5() => Text('Foo 5');
+Widget $foo5() => const Text('Foo 5');
