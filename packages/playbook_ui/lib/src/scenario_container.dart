@@ -6,6 +6,7 @@ class ScenarioContainer extends StatelessWidget {
   const ScenarioContainer({
     super.key,
     required this.scenario,
+    required this.navigationPath,
     required this.thumbnailScale,
     this.canvasColor,
     this.checkeredColor,
@@ -13,6 +14,7 @@ class ScenarioContainer extends StatelessWidget {
   });
 
   final Scenario scenario;
+  final String navigationPath;
   final double thumbnailScale;
   final Color? canvasColor;
   final Color? checkeredColor;
@@ -80,22 +82,8 @@ class ScenarioContainer extends StatelessWidget {
       ),
       onTap: () {
         FocusScope.of(context).unfocus();
-        Navigator.of(context).push(
-          MaterialPageRoute<dynamic>(
-            fullscreenDialog: true,
-            builder: (context) {
-              return DialogScaffold(
-                title: Text(scenario.title),
-                body: ScenarioWidget(
-                  canvasColor: canvasColor,
-                  checkeredColor: checkeredColor,
-                  useMaterial: false,
-                  scenario: scenario,
-                  builder: widgetBuilder,
-                ),
-              );
-            },
-          ),
+        Navigator.of(context).pushNamed(
+          navigationPath,
         );
       },
     );
